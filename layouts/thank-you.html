@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="thank-you-section">
+  <div class="container">
+    <div class="thank-you-card">
+      <div class="success-icon">
+        <i class="fa fa-check"></i>
+      </div>
+      <h1>{{ .Params.hero.title }}</h1>
+      <p>{{ .Params.hero.message }}</p>
+      <a href="{{ "/" | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.hero.button_text }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

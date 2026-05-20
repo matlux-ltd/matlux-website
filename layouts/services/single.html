@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow dark">{{ .Params.hero.eyebrow }}</p>
+    <h1>{{ .Params.hero.title }}</h1>
+    <p>{{ .Params.hero.subtitle }}</p>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-4">
+      {{ range .Params.services }}
+      <div class="col-lg-6">
+        <article class="detail-card">
+          <div class="detail-card-icon"><i class="{{ .icon }}"></i></div>
+          <div>
+            <h2>{{ .title }}</h2>
+            <p>{{ .description }}</p>
+            <ul class="feature-list">
+              {{ range .features }}
+              <li><i class="fa-solid fa-check"></i><span>{{ . }}</span></li>
+              {{ end }}
+            </ul>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="cta-section section-padding">
+  <div class="container">
+    <p class="eyebrow">{{ .Params.cta.title }}</p>
+    <h2>{{ .Params.cta.subtitle }}</h2>
+    <a href="{{ .Params.cta.button_url | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.cta.button_text }}</a>
+  </div>
+</section>
+{{ end }}

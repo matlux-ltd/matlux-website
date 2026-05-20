@@ -1,0 +1,86 @@
+{{ define "main" }}
+<section class="hero-section homepage-hero" style="background-image: url('{{ .Params.hero.background_image | relURL }}');">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">{{ .Params.hero.eyebrow }}</p>
+    <h1>{{ .Params.hero.title }}</h1>
+    <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+    <div class="hero-actions">
+      <a href="{{ .Params.hero.primary_button.url | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.hero.primary_button.text }}</a>
+      <a href="{{ .Params.hero.secondary_button.url | relURL }}" class="btn btn-custom-outline btn-lg">{{ .Params.hero.secondary_button.text }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="proof-strip">
+  <div class="container">
+    <div class="row g-3">
+      {{ range .Params.proof.items }}
+      <div class="col-md-4">
+        <div class="proof-item">
+          <strong>{{ .value }}</strong>
+          <span>{{ .label }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ .Params.services_preview.title }}</h2>
+      <p>{{ .Params.services_preview.intro }}</p>
+    </div>
+    <div class="row g-4">
+      {{ range .Params.services_preview.items }}
+      <div class="col-md-6 col-xl-3">
+        <article class="service-card">
+          <i class="{{ .icon }}"></i>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding approach-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <p class="eyebrow dark">{{ .Params.approach.eyebrow }}</p>
+        <h2>{{ .Params.approach.title }}</h2>
+        <p class="lead">{{ .Params.approach.content }}</p>
+      </div>
+      <div class="col-lg-7">
+        <div class="system-panel" aria-hidden="true">
+          <div class="system-node node-a"></div>
+          <div class="system-node node-b"></div>
+          <div class="system-node node-c"></div>
+          <div class="system-node node-d"></div>
+          <div class="system-line line-a"></div>
+          <div class="system-line line-b"></div>
+          <div class="system-line line-c"></div>
+          <div class="system-line line-d"></div>
+        </div>
+        <ul class="check-list">
+          {{ range .Params.approach.points }}
+          <li><i class="fa-solid fa-check"></i><span>{{ . }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section section-padding">
+  <div class="container">
+    <h2>{{ .Params.cta.title }}</h2>
+    <p>{{ .Params.cta.content }}</p>
+    <a href="{{ .Params.cta.button_url | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.cta.button_text }}</a>
+  </div>
+</section>
+{{ end }}

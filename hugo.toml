@@ -1,0 +1,53 @@
+baseURL = "https://www.matlux.net/"
+relativeURLs = true
+canonifyURLs = true
+languageCode = "en-gb"
+title = "Matlux Ltd"
+disableKinds = ["taxonomy", "term"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 20
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 30
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 40
+
+[params]
+  contact_email = "info@matlux.net"
+  contact_location = "London, UK / Remote"
+  linkedin_url = "https://www.linkedin.com/company/matlux-ltd/"
+  github_url = "https://github.com/matlux"
+  description = "Matlux Ltd designs and delivers scalable backend systems, distributed architectures, cloud platforms, and blockchain/Web3 solutions."
+
+[minify]
+  minifyOutput = true
+
+[minify.tdewolff]
+  [minify.tdewolff.html]
+    keepConditionalComments = true
+    keepDefaultAttrVals = true
+    keepDocumentTags = true
+    keepEndTags = true
+    keepQuotes = true
+    keepWhitespace = false
+  [minify.tdewolff.css]
+    keepCSS2 = true
+    precision = 0
+  [minify.tdewolff.js]
+    keepVarNames = false
+    precision = 0
+  [minify.tdewolff.json]
+    precision = 0
+  [minify.tdewolff.xml]
+    keepWhitespace = false

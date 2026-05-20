@@ -1,0 +1,70 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow dark">{{ .Params.hero.eyebrow }}</p>
+    <h1>{{ .Params.hero.title }}</h1>
+    <p>{{ .Params.hero.subtitle }}</p>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <p class="eyebrow dark">Reach out</p>
+        <h2>{{ .Params.contact.title }}</h2>
+        <p class="lead">{{ .Params.contact.intro }}</p>
+
+        <div class="contact-list">
+          {{ range .Params.contact.details }}
+          <div class="contact-info-block">
+            <i class="{{ .icon }}"></i>
+            <div>
+              <p class="contact-label">{{ .label }}</p>
+              {{ if .href }}
+              <a href="{{ .href }}">{{ .value }}</a>
+              {{ else }}
+              <span>{{ .value }}</span>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="contact-form-card">
+          <h2>{{ .Params.form.title }}</h2>
+          <form action="{{ .Params.form.action }}" method="POST" class="needs-validation" novalidate>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="{{ .Params.form.next }}">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="fullName" class="form-label">Name*</label>
+                <input type="text" class="form-control form-control-lg" id="fullName" name="Name" autocomplete="name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="emailAddress" class="form-label">Email*</label>
+                <input type="email" class="form-control form-control-lg" id="emailAddress" name="Email" autocomplete="email" required>
+              </div>
+              <div class="col-12">
+                <label for="company" class="form-label">Company</label>
+                <input type="text" class="form-control form-control-lg" id="company" name="Company" autocomplete="organization">
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message*</label>
+                <textarea class="form-control form-control-lg" id="message" name="Message" rows="6" required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-custom-primary btn-lg mt-4">
+              Send message <i class="fa fa-paper-plane ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
