@@ -33,6 +33,10 @@ services:
       - "Cosmos SDK and verifiable trust infrastructure"
       - "Decentralized identity and verifiable credential systems"
       - "Bridges between blockchain networks and enterprise platforms"
+    links:
+      - text: "Remote Identity Verification prototype"
+        url: "/services/remote-identity-verification/"
+        description: "Passport-backed remote identity checks using Hologram, DIDComm, and verifiable credential infrastructure."
   - icon: "fa-solid fa-gears"
     title: "Cloud & Delivery Automation"
     description: "Create delivery foundations that make engineering faster, safer, and easier to operate."

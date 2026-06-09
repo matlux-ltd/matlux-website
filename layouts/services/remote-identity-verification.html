@@ -1,0 +1,112 @@
+{{ define "main" }}
+<section class="page-hero service-landing-hero">
+  <div class="container">
+    <p class="eyebrow dark">{{ .Params.hero.eyebrow }}</p>
+    <h1>{{ .Params.hero.title }}</h1>
+    <p class="service-headline">{{ .Params.hero.headline }}</p>
+    <p>{{ .Params.hero.subtitle }}</p>
+    <div class="page-hero-actions">
+      <a href="{{ .Params.hero.primary_button.url | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.hero.primary_button.text }}</a>
+      <a href="{{ .Params.hero.secondary_button.url }}" class="btn btn-custom-secondary btn-lg" target="_blank" rel="noopener">{{ .Params.hero.secondary_button.text }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ .Params.what_it_does.title }}</h2>
+      <p>{{ .Params.what_it_does.intro }}</p>
+    </div>
+    <div class="process-grid">
+      {{ range $index, $step := .Params.what_it_does.steps }}
+      <article class="process-step">
+        <div class="process-number">{{ printf "%02d" (add $index 1) }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <div class="prototype-callout">
+      <p>{{ .Params.what_it_does.prototype_note }}</p>
+      <a href="{{ .Params.prototype_url }}" class="btn btn-custom-secondary" target="_blank" rel="noopener">Try the live prototype</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding muted-section">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="eyebrow dark">Why it matters</p>
+        <h2>{{ .Params.why_it_matters.title }}</h2>
+      </div>
+      <div class="col-lg-7">
+        <ul class="check-list">
+          {{ range .Params.why_it_matters.items }}
+          <li><i class="fa-solid fa-check"></i><span>{{ . }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ .Params.technical_shape.title }}</h2>
+      <p>{{ .Params.technical_shape.intro }}</p>
+    </div>
+    <div class="row g-4">
+      {{ range .Params.technical_shape.items }}
+      <div class="col-md-6">
+        <article class="technical-card">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding muted-section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <p class="eyebrow dark">Use cases</p>
+        <h2>{{ .Params.use_cases.title }}</h2>
+      </div>
+      <div class="col-lg-7">
+        <div class="use-case-list">
+          {{ range .Params.use_cases.items }}
+          <span>{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <article class="caveat-panel">
+      <p class="eyebrow dark">Prototype framing</p>
+      <h2>{{ .Params.caveat.title }}</h2>
+      <p>{{ .Params.caveat.content }}</p>
+    </article>
+  </div>
+</section>
+
+<section class="cta-section section-padding">
+  <div class="container">
+    <h2>{{ .Params.cta.title }}</h2>
+    <p>{{ .Params.cta.content }}</p>
+    <div class="hero-actions justify-content-center">
+      <a href="{{ .Params.cta.primary_button.url | relURL }}" class="btn btn-custom-primary btn-lg">{{ .Params.cta.primary_button.text }}</a>
+      <a href="{{ .Params.cta.secondary_button.url }}" class="btn btn-custom-outline btn-lg" target="_blank" rel="noopener">{{ .Params.cta.secondary_button.text }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

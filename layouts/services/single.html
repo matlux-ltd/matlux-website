@@ -22,6 +22,16 @@
               <li><i class="fa-solid fa-check"></i><span>{{ . }}</span></li>
               {{ end }}
             </ul>
+            {{ with .links }}
+            <div class="service-links">
+              {{ range . }}
+              <a href="{{ .url | relURL }}" class="service-link-card">
+                <span>{{ .text }}</span>
+                <small>{{ .description }}</small>
+              </a>
+              {{ end }}
+            </div>
+            {{ end }}
           </div>
         </article>
       </div>
