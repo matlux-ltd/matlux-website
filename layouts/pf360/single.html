@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="policy-page section-padding">
+  <div class="container">
+    <article class="policy-document">
+      <header class="policy-header">
+        <p class="eyebrow dark">PF360 Personal Net Worth</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.last_updated }}
+        <p class="policy-updated">Last updated: {{ . }}</p>
+        {{ end }}
+      </header>
+
+      <div class="policy-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+</section>
+{{ end }}
