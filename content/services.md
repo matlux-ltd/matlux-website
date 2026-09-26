@@ -25,6 +25,10 @@ services:
       - "Pricing, risk, settlement, and reporting systems"
       - "Event-driven services, GraphQL, REST, and WebSocket APIs"
       - "Testing strategy, observability, and production readiness"
+    links:
+      - text: "JVM Breakglass open-source library"
+        url: "/services/jvm-breakglass/"
+        description: "A Matlux Java/Clojure library for controlled live JVM inspection, Spring bean introspection, and JMX-managed nREPL diagnostics."
   - icon: "fa-solid fa-cubes"
     title: "Blockchain, DeFi & Digital Trust"
     description: "Build Web3 systems that connect smart contracts, chain infrastructure, product workflows, and governance needs."
