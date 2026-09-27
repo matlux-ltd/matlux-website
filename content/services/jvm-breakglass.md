@@ -83,6 +83,13 @@ resources:
       url: "https://cljdoc.org/d/net.matlux/jvm-breakglass/0.1.0"
       description: "Generated API documentation for version 0.1.0."
 
+related_note:
+  eyebrow: "Related technical note"
+  title: "Unfold and Anamorphisms in Modern Clojure"
+  description: "A practical comparison of sequence generation with unfoldr, iterate, lazy-seq, and Clojure's newer iteration function."
+  url: "/insights/anamorphisms-in-clojure/"
+  link_text: "Read the technical note"
+
 caveat:
   title: "Operational Framing"
   content: "JVM Breakglass is an open-source diagnostic library, not a hosted SaaS platform or generic monitoring product. It is powerful because it runs inside the application process, which means it must be handled as privileged engineering tooling with clear access controls and operating procedures."

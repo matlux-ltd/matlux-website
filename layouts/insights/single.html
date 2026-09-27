@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article>
+  <header class="page-hero article-hero">
+    <div class="container">
+      <p class="eyebrow dark">Technical note</p>
+      <h1>{{ .Title }}</h1>
+      <p class="article-standfirst">{{ .Description }}</p>
+      <p class="article-meta">
+        <span>By {{ .Params.author }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">Originally published {{ .Date.Format "2 January 2006" }}</time>
+        {{ with .Params.revised }}<span>Revised {{ time.Format "2 January 2006" . }}</span>{{ end }}
+      </p>
+    </div>
+  </header>
+
+  <div class="article-shell section-padding">
+    <div class="container article-layout">
+      <aside class="article-toc" aria-label="Article contents">
+        <p>In this note</p>
+        {{ .TableOfContents }}
+      </aside>
+      <div class="article-body">
+        {{ .Content }}
+        <footer class="article-footer">
+          <a class="text-link" href="{{ "/insights/" | relURL }}">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            All technical notes
+          </a>
+          <a class="text-link" href="{{ "/contact/" | relURL }}">
+            Discuss a technical problem
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

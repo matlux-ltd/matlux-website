@@ -121,6 +121,17 @@
       </a>
       {{ end }}
     </div>
+    <aside class="related-note-callout" aria-labelledby="related-note-title">
+      <div>
+        <p class="eyebrow dark">{{ .Params.related_note.eyebrow }}</p>
+        <h3 id="related-note-title">{{ .Params.related_note.title }}</h3>
+        <p>{{ .Params.related_note.description }}</p>
+      </div>
+      <a class="text-link" href="{{ .Params.related_note.url | relURL }}">
+        {{ .Params.related_note.link_text }}
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </aside>
   </div>
 </section>
 

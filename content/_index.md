@@ -50,6 +50,14 @@ approach:
     - "Strengthen existing systems through targeted refactoring, testing, automation, and operational insight."
     - "Work effectively with remote stakeholders, engineering teams, founders, and financial-sector governance."
 
+technical_note:
+  eyebrow: "Technical notes"
+  title: "Unfold and Anamorphisms in Modern Clojure"
+  summary: "A practical look at generating sequences from state, comparing Haskell's unfoldr with Clojure's iterate, lazy-seq, and the newer iteration function."
+  meta: "Originally published May 2014 · Revised September 2026"
+  url: "/insights/anamorphisms-in-clojure/"
+  link_text: "Read the technical note"
+
 cta:
   title: "Need senior help on a complex platform?"
   content: "Bring Matlux in for architecture, delivery, review, or a focused technical rescue."

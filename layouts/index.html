@@ -76,6 +76,25 @@
   </div>
 </section>
 
+<section class="section-padding technical-note-preview-section">
+  <div class="container">
+    <div class="technical-note-preview">
+      <div>
+        <p class="eyebrow dark">{{ .Params.technical_note.eyebrow }}</p>
+        <h2>{{ .Params.technical_note.title }}</h2>
+      </div>
+      <div>
+        <p class="technical-note-meta">{{ .Params.technical_note.meta }}</p>
+        <p>{{ .Params.technical_note.summary }}</p>
+        <a href="{{ .Params.technical_note.url | relURL }}" class="text-link">
+          {{ .Params.technical_note.link_text }}
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section section-padding">
   <div class="container">
     <h2>{{ .Params.cta.title }}</h2>
