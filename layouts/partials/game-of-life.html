@@ -1,0 +1,24 @@
+{{ $url := .Site.Params.game_of_life_url }}
+{{ if hugo.IsServer }}
+  {{ with os.Getenv "HUGO_GAME_OF_LIFE_PREVIEW_URL" }}{{ $url = . }}{{ end }}
+{{ end }}
+<section class="life-playground" aria-labelledby="playground-heading" data-playground-url="{{ $url }}">
+  <div class="container">
+    <div class="life-playground-heading">
+      <div>
+        <p class="eyebrow dark">Try it yourself</p>
+        <h2 id="playground-heading">A world you can change</h2>
+      </div>
+      <a class="text-link" href="{{ $url }}" target="_blank" rel="noopener noreferrer">Open full-screen playground ↗</a>
+    </div>
+    <div class="life-launch-panel">
+      <p>Choose a famous pattern, click cells to change its course, or write your own ClojureScript rule.</p>
+      <p class="life-launch-note">The playground loads only when you launch it. It runs in your browser; reloading starts a fresh experiment.</p>
+      <button class="btn btn-custom-primary" type="button" data-launch-playground>Launch playground</button>
+      <noscript><p>Use the full-screen link above to open the playground. JavaScript is required to run it.</p></noscript>
+    </div>
+    <div class="life-frame-slot"></div>
+    <p class="life-frame-help" hidden>If the playground does not appear, use the full-screen link above. Opening it in a new tab starts a separate experiment.</p>
+  </div>
+</section>
+<script src="{{ "js/game-of-life-embed.js" | relURL }}" defer></script>
