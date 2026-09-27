@@ -13,6 +13,10 @@
     </div>
   </header>
 
+  {{ if eq .Params.playground "game-of-life" }}
+    {{ partial "game-of-life.html" . }}
+  {{ end }}
+
   <div class="article-shell section-padding">
     <div class="container article-layout">
       <aside class="article-toc" aria-label="Article contents">

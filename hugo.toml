@@ -24,6 +24,7 @@ disableKinds = ["taxonomy", "term"]
     weight = 40
 
 [params]
+  game_of_life_url = "https://game-of-life.os.matlux.net/"
   contact_email = "info@matlux.net"
   contact_location = "London, UK / Remote"
   linkedin_url = "https://www.linkedin.com/company/matlux-ltd/"

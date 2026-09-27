@@ -1412,3 +1412,18 @@ a:hover {
     padding: 26px;
   }
 }
+
+/* The interactive application has its own origin and styles. */
+.life-playground { padding: 48px 0 0; background: var(--bg-soft); }
+.life-playground-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 24px; }
+.life-playground-heading h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin: 0; }
+.life-playground-heading .text-link { flex-shrink: 0; }
+.life-launch-panel { padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: var(--card-bg); box-shadow: var(--shadow); }
+.life-launch-panel p { max-width: 680px; }
+.life-launch-note, .life-frame-help { color: var(--muted); font-size: .9rem; }
+.life-frame { display: block; width: 100%; height: 1200px; border: 1px solid var(--border); border-radius: 12px; background: #151917; }
+.life-frame-help { margin: 14px 0 0; }
+@media (max-width: 880px) {
+  .life-frame { height: 1800px; }
+  .life-launch-panel { padding: 24px; }
+}
